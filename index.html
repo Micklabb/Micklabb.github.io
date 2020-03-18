@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Probe Device Reset Page</h1>
+      <h4>By Micky Labrèche (2020)</h4>
+      <h4 id="success" style="color:green; display:none">Submit success!</h4>
+      <form action="/macreset" method="post">
+        <fieldset>
+          <legend>Update Device Settings:</legend>
+          <label for="mac">Device:</label>
+          <select id="mac" name="mac">
+          </select><br><br>
+          <label for="ledid">LED:</label>
+          <select id="ledid" name="ledid">
+            <option value="1">LED 1</option>
+            <option value="2">LED 2</option>
+            <option value="3">LED 3</option>
+            <option value="4">LED 4</option>
+          </select><br><br>
+          <input type="submit" value="Update Device">
+        </fieldset>
+      </form><br><br>
+      <form action="/apreset" method="post">
+        <fieldset>
+          <legend>Update AP Settings:</legend>
+          <label for="ssid">Acces Point (SSID):</label>
+          <input type="text" id="ssid" name="ssid"><br><br>
+          <label for="password">Password:</label>
+          <input type="text" id="password" name="password"><br><br>
+          <input type="submit" value="Update AP">
+          <span style="color:red">* This will erase all saved devices</span>
+        </fieldset>
+      </form><br><br>
+      <form action="/restart">
+        <input type="submit" value="Restart System">
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
