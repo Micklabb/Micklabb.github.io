@@ -7,12 +7,10 @@
   }
 
   const Http = new XMLHttpRequest();
-  const url='https://file.io/v6qKsv';
-  Http.open("GET", url);
-  Http.send();
+  const url='https://raw.githubusercontent.com/Micklabb/Micklabb.github.io/master/lines2.txt';
 
-  Http.onreadystatechange = (e) => {
-    if (this.readyState == 4 && this.status == 200) {
+  Http.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
       var maclist = Http.responseText.split('\n');
       for (i = 0; i < maclist.length; i++) {
         var option = document.createElement('option');
@@ -25,4 +23,8 @@
       message.style.color = "red";
     }
   }
+
+  Http.open("GET", url);
+  Http.send();
+  
 })();
